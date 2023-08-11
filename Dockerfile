@@ -5,7 +5,8 @@ FROM php:8.2.5-cli
 RUN apt-get update && apt-get install -y \
     git \
     zip \
-    unzip
+    unzip \
+    libpq-dev # Install the PostgreSQL development library
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -18,6 +19,7 @@ COPY . .
 
 # Install Composer dependencies
 RUN composer install --no-interaction --prefer-dist
+RUN docker-php-ext-install pdo pdo_pgsql
 RUN php artisan key:generate
 # Expose port 8000 (Laravel's default development server port)
 EXPOSE 80

@@ -2,6 +2,7 @@
 
 <h3> Como executar a aplicação localmente </h3>
 
+<h3>0. Peça para o Antonio mandar o arquivo de variáveis de ambiente e coloque na raiz do projeto</h3>
 <h3>1. Instale docker</h3>
 <h3>2. inicialize o docker abrindo o app docker desktop</h3>
 <h3>3. Abra o projeto e execute no cmd na raíz do projeto:</h3>

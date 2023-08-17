@@ -1,0 +1,107 @@
+* {
+    font-family: Abel;
+}
+
+body {
+    text-align: center;
+}
+
+#content {
+    text-align: center;
+    margin-top: 100px;
+    width: 500px;
+    display: inline-block;
+}
+
+#content img {
+    width: 256px;
+}
+
+#content .conteiner {
+    margin-top: 25px;
+    width: 400px;
+    display: inline-block;
+}
+
+#content .conteiner * {
+    display: inline-block;
+}
+
+#content .conteiner label {
+    float: left;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#content .conteiner .entry {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid #CCC;
+    margin-top: 2px;
+}
+
+#content .conteiner .entry:focus {
+    border: 2px solid #7b04e7;
+    outline: none;
+}
+
+#content .conteiner .alert {
+    float: left;
+    font-weight: bold;
+    margin-top: -10px;
+    font-size: 14px;
+    margin-left: -18px;
+}
+
+#content .conteiner .alert::before {
+    content: "";
+    display: inline-block;
+    left: -16px;
+    top: -28px;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    display: none;
+}
+
+#content .conteiner.check .entry {
+    border: 2px solid green
+}
+
+#content .conteiner.check .alert {
+    color: green
+}
+
+#content .conteiner.check .alert::before {
+    background-image: url(../img/icon_check.png);
+    display: inline-block;
+}
+
+#content .conteiner.error .entry {
+    border: 2px solid red
+}
+
+#content .conteiner.error .alert {
+    color: red;
+}
+
+#content .conteiner.error .alert::before {
+    background-image: url(../img/icon_cross.png);
+    display: inline-block;
+}
+
+#content button {
+    margin-top: 60px;
+    background-color: #7b04e7;
+    color: #FFF;
+    width: 400px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px;
+    border: 0;
+    cursor: pointer;
+}

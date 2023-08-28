@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ActiveIngredientsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,3 +27,4 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class, 'index']);
 
+Route::get('/active-ingredients', [ActiveIngredientsController::class, 'index']);

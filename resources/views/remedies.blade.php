@@ -10,7 +10,7 @@
             <ul>
                 @foreach ($remedies as $remedy)
                     <a href="{{ url('/active-ingredient/'.$remedy->active_ingredients) }}">
-                        {{ $remedy->active_ingredients}}
+                        {{$remedy->active_ingredients}} - {{$remedy->count}}
                     </a>
                     <br>
                 @endforeach

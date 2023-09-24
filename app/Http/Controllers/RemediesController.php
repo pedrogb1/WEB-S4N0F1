@@ -20,8 +20,10 @@ class RemediesController extends Controller
         $updatedAtMax = Remedies::max('updated');
         
         $remedies = Remedies::where('updated', $updatedAtMax)
-            ->distinct()
-            ->get(['active_ingredients']);
+            ->groupBy(['active_ingredients'])
+            ->selectRaw('COUNT(*) as count, active_ingredients')
+            ->orderBy('count', 'desc')
+            ->get();
 
         return view('remedies', compact('remedies'));
         

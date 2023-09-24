@@ -38,8 +38,9 @@
             </div>
 
             <button type="submit">Clique aqui para acessar</button>
+            </form>
+
         </div>
-</form>
 
     </body>
 </html>

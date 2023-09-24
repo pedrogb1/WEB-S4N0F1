@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>Versão</title>
 </head>
 <body>
-    @if ($errors->any())
-        <div class="alert alert-danger">
+        <div>
             <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
+                @foreach ($versions as $version)
+                    <h4>
+                        {{ $version->active_ingredients. ' ' . $version->complement}}
+                    </h4>
                 @endforeach
             </ul>
         </div>
-    @endif
-    <h1>Authenticated!</h1>
 </body>
 </html>

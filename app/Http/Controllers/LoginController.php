@@ -23,7 +23,7 @@ class LoginController extends Controller
 
         if ($user && $user->password === $request->password) {
             Auth::login($user);
-            return redirect('/home');
+            return redirect('/active-ingredients');
         } else {
             return back()->withErrors(['message' => 'Invalid credentials']);
         }

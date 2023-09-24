@@ -8,8 +8,11 @@
 <body>
         <div>
             <ul>
-                @foreach ($activeIngredients as $activeIngredient)
-                    <h4>{{ $activeIngredient->name }}</h4>
+                @foreach ($remedies as $remedy)
+                    <a href="{{ url('/active-ingredient/'.$remedy->active_ingredients) }}">
+                        {{ $remedy->active_ingredients}}
+                    </a>
+                    <br>
                 @endforeach
             </ul>
         </div>

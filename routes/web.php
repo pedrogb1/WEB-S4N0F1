@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ActiveIngredientsController;
+use App\Http\Controllers\RemediesController;
+use App\Http\Controllers\VersionsController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,9 +24,11 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
 Route::get('/', function () {
-    return redirect('home');
+    return redirect('active-ingredients');
 });
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/active-ingredients', [HomeController::class, 'index']);
 
-Route::get('/active-ingredients', [ActiveIngredientsController::class, 'index']);
+Route::get('/active-ingredients', [RemediesController::class, 'index']);
+
+Route::get('/active-ingredient/{active_ingredient}', [VersionsController::class, 'index']);

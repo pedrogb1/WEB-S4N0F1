@@ -6,12 +6,32 @@
     <title>variações</title>
 </head>
 <body>
+        <h1>FORMATOS:</h1>
         <div>
+            @foreach ($possibleFormats as $format)
+                <p>{{$format->format}}</p>
+            @endforeach
+        </div>
+        <h1>EMBALAGENS:</h1>
+        <div>
+            @foreach ($possiblePackaging as $packaging)
+                <p>{{$packaging->packaging}}</p>
+            @endforeach
+        </div>
+        <h1>Tipos:</h1>
+        <div>
+            @foreach ($possibleTypes as $types)
+                <p>{{$types->type}}</p>
+            @endforeach
+        </div>
+        <div>
+            <h1>Versões</h1>
             <ul>
                 @foreach ($versions as $version)
-                    <h4>
-                        {{$version->active_ingredients.' '.$version->complement}}
-                    </h4>
+                    <h5>
+                        {{$version->active_ingredients.' '.$version->complement.' '.$version->dosage
+                        .' - '.'denominação comercial: '.$version->product}}
+                    </h5>
                 @endforeach
             </ul>
         </div>

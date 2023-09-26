@@ -13,6 +13,9 @@ class Remedies extends Model
         'complement',
         'dosage',
         'format',
-        'active_ingredients'
+        'active_ingredients',
+        'packaging',
+        'product',
+        'type'
     ];
 }

@@ -21,10 +21,34 @@ class VersionsController extends Controller
         
         $versions = Remedies::where('updated', $updatedAtMax)
             ->where('active_ingredients', $active_ingredient)
+            ->select('dosage', 'active_ingredients', 'complement', 'product')
+            ->distinct()
+            ->orderBy('complement')
             ->get();
 
+        $possibleFormats = Remedies::where('updated', $updatedAtMax)
+            ->where('active_ingredients', $active_ingredient)
+            ->select('format')
+            ->distinct()
+            ->get();
 
-        return view('version', compact('versions'));
+        $possiblePackaging = Remedies::where('updated', $updatedAtMax)
+            ->where('active_ingredients', $active_ingredient)
+            ->select('packaging')
+            ->distinct()
+            ->get();
+
+        $possibleTypes = Remedies::where('updated', $updatedAtMax)
+            ->where('active_ingredients', $active_ingredient)
+            ->select('type')
+            ->distinct()
+            ->get();
+
+     
+            
+
+
+        return view('version', compact('versions', 'possibleFormats', 'possiblePackaging', 'possibleTypes'));
         
     }
 

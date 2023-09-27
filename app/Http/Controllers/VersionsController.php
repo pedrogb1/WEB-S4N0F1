@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Remedies;
+use App\Models\RemediesMatch;
+
 
 
 
@@ -44,11 +46,23 @@ class VersionsController extends Controller
             ->distinct()
             ->get();
 
+        $matchRemedies = RemediesMatch::where('active_ingredients', $active_ingredient)
+            ->select('match')
+            ->distinct()
+            ->get();
+
+
      
             
 
 
-        return view('version', compact('versions', 'possibleFormats', 'possiblePackaging', 'possibleTypes'));
+        return view('version', compact(
+            'versions',
+             'possibleFormats',
+              'possiblePackaging',
+               'possibleTypes',
+               'matchRemedies'
+            ));
         
     }
 

@@ -1,10 +1,11 @@
 <?php
 
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RemediesController;
 use App\Http\Controllers\VersionsController;
 use App\Http\Controllers\ScrapingStatusController;
+use App\Http\Controllers\StatisticsController;
+
 
 
 use Illuminate\Support\Facades\Route;
@@ -29,10 +30,11 @@ Route::get('/', function () {
     return redirect('active-ingredients');
 });
 
-Route::get('/active-ingredients', [HomeController::class, 'index']);
-
 Route::get('/active-ingredients', [RemediesController::class, 'index']);
 
 Route::get('/active-ingredient/{active_ingredient}', [VersionsController::class, 'index']);
 
 Route::get('/scraping-status', [ScrapingStatusController::class, 'index']);
+
+Route::get('/statistics', [StatisticsController::class, 'index']);
+

@@ -1,0 +1,65 @@
+* {font-family: Abel; }
+
+body {text-align: center; }
+#header {padding: 20px;}
+#header > img {width: 256px; }
+#header #menu {margin-top: 40px;padding: 14px;background-color: rgba(123, 4, 231, 0.3);border-radius: 16px;}
+#header #menu > a {color: #333;padding: 4px;margin: 10px 10px;position: relative;text-decoration: none;font-size: 18px;font-weight: bold;}
+#header #menu > a:nth-child(1)::before{ content: "Principios ativos"}
+#header #menu > a:nth-child(2)::before{ content: "Estatísticas"}
+#header #menu > a:nth-child(3)::before{ content: "Status da extração"}
+#header #menu a:hover{opacity: 0.6;}
+#header #menu #pesquisar{position: relative;float: right;margin-left: -200px;}
+#header #menu #pesquisar input {border: 0;padding: 6px;border-radius: 8px;outline: none;width: 148px;margin-top: -4px;}
+#header #menu #pesquisar a {float: right;padding: 3px;}
+#header #menu #pesquisar img {width: 20px;opacity: 0.6;padding-left: 4px;}
+
+/* Login */
+#content {text-align: center; margin-top: 100px; width: 500px; display: inline-block; }
+#content img {width: 256px; }
+#content .conteiner {margin-top: 25px; width: 400px; display: inline-block; }
+#content .conteiner * {display: inline-block; }
+#content .conteiner label {float: left; font-weight: bold; font-size: 16px; }
+#content .conteiner .entry {width: 100%; padding: 12px; border-radius: 20px; border: 1px solid #CCC; margin-top: 2px; }
+#content .conteiner .entry:focus {border: 2px solid #7b04e7; outline: none; }
+#content .conteiner .alert {float: left; font-weight: bold; margin-top: -10px; font-size: 14px; margin-left: -18px; }
+#content .conteiner .alert::before {content: ""; display: inline-block; left: -16px; top: -28px; width: 28px; height: 28px; background-repeat: no-repeat; background-size: contain; position: relative; display: none; }
+#content .conteiner.check .entry {border: 2px solid green}
+#content .conteiner.check .alert {color: green}
+#content .conteiner.check .alert::before {background-image: url(../img/icon_check.png); display: inline-block; }
+#content .conteiner.error .entry {border: 2px solid red}
+#content .conteiner.error .alert {color: red; }
+#content .conteiner.error .alert::before {background-image: url(../img/icon_cross.png); display: inline-block; }
+#content button {margin-top: 60px; background-color: #7b04e7; color: #FFF; width: 400px; border-radius: 20px; font-size: 16px; font-weight: bold; padding: 8px; border: 0; cursor: pointer; }
+
+/* Conteiner das paginas */
+.conteiner {width: 1080px;display: inline-block;}
+.conteiner::before {font-size: 22px;font-weight: bold;border-bottom: 2px solid #EEE;display: inline-block;padding: 10px 300px;}
+
+/* Principios */
+#principios {}
+#principios::before {content: "Principios ativos";}
+#principios ul {}
+#principios ul a {color: #333;padding: 8px;margin: 10px 10px;position: relative;text-decoration: none;font-size: 18px;font-weight: bold;float: left;background-color: #CCC;border-radius: 8px;}
+#principios ul a:hover {background-color: rgba(123, 4, 231, 0.3)}
+
+#principios2 {}
+#principios2::before {content: "Principios ativos";}
+#principios2 ul {}
+#principios2 ul a {color: #333;padding: 8px;margin: 10px 10px;position: relative;text-decoration: none;font-size: 18px;font-weight: bold;float: left;background-color: #CCC;border-radius: 8px;}
+#principios2 ul a:hover {background-color: rgba(123, 4, 231, 0.3)}
+
+
+/* Variações */
+#versions {}
+#versions::before {content: "Variações";}
+#versions div {width: 100%;display: inline-block;}
+#versions div p:empty {display: none;}
+#versions div p {color: #333;padding: 10px 28px;margin: 10px 10px;font-weight: bold;float: left;background-color: #CCC;border-radius: 8px;text-align: left;}
+
+/* Status da extração */
+#status {}
+#status::before {content: "Status da extração";}
+#status ul {}
+#status ul div {color: #333;padding: 10px 28px;margin: 10px 10px;font-weight: bold;float: left;background-color: #CCC;border-radius: 8px;text-align: left;}
+
